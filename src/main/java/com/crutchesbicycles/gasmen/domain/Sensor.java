@@ -7,7 +7,7 @@ public class Sensor {
     public String location;
     public String model;
     public LocalDateTime warranty;
-    public Integer idSensorStatus;
+    public String idSensorStatus;
     public Integer idSensorType;
     public Double value;
     public LocalDateTime date;
@@ -15,7 +15,7 @@ public class Sensor {
     public Sensor() {
     }
 
-    public Sensor(Long id, String location, String model, LocalDateTime warranty, Integer idSensorStatus,
+    public Sensor(Long id, String location, String model, LocalDateTime warranty, String idSensorStatus,
                   Integer idSensorType, Double value, LocalDateTime date) {
         this.id = id;
         this.location = location;
@@ -59,11 +59,11 @@ public class Sensor {
         this.warranty = warranty;
     }
 
-    public Integer getIdSensorStatus() {
+    public String getIdSensorStatus() {
         return idSensorStatus;
     }
 
-    public void setIdSensorStatus(Integer idSensorStatus) {
+    public void setIdSensorStatus(String idSensorStatus) {
         this.idSensorStatus = idSensorStatus;
     }
 

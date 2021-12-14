@@ -21,6 +21,7 @@ public class SensorService {
     private synchronized Sensor getRandomObject(){
         List<String> locations = Arrays.asList("Office", "Home", "Work", "Dacha");
         List<String> models = Arrays.asList("AHGJH", "JFDGH", "DHGHJ", "EYEUO", "QTKGN");
+        List<String> status = Arrays.asList("On", "On", "On", "Off", "Faulty");
         ThreadLocalRandom r = ThreadLocalRandom.current();
         Sensor sensor = new Sensor();
 
@@ -28,10 +29,12 @@ public class SensorService {
         sensor.setLocation(locations.get(r.nextInt(locations.size())));
         sensor.setModel(models.get(r.nextInt(models.size())));
         sensor.setWarranty(LocalDateTime.now().minusMinutes(r.nextInt(40)).minusSeconds(r.nextInt(60)));
-        sensor.setIdSensorStatus(r.nextInt(5));
+        sensor.setIdSensorStatus(status.get(r.nextInt(status.size())));
+
         sensor.setIdSensorType(r.nextInt(4));
-        sensor.setValue(r.nextDouble(0.12, 100.23));
+        sensor.setValue((double) Math.round(r.nextDouble(0.12, 100.23)));
         sensor.setDate(LocalDateTime.now().minusSeconds(r.nextInt(400)));
+
 
         return sensor;
     }

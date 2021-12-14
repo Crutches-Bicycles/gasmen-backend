@@ -21,7 +21,7 @@ public class SensorController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Sensor> getSensorsInfo(){
-        mqttService.getMessage();
+        //mqttService.getMessage();
         return sensorService.getSensorInfo(ThreadLocalRandom.current().nextInt(1, 20));
     }
 
