@@ -35,6 +35,7 @@ public class SensorService {
         sensor.setValue((double) Math.round(r.nextDouble(0.12, 100.23)));
         sensor.setDate(LocalDateTime.now().minusSeconds(r.nextInt(400)));
 
+        sensor.setModel(sensor.getModel() + " " + sensor.getIdSensorType().toString());
 
         return sensor;
     }
